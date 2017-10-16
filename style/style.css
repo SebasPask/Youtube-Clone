@@ -1,10 +1,33 @@
 .search-bar{
     margin: 20px;
     text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
 }
 .search-bar input{
     width: 75%;
     border: 1px solid #ddd;
+
+    webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    border-radius: 5px 0 0 5px;
+    padding: 1rem;
+}
+.search-bar button{
+    width: 15%;
+    border: 1px solid #ddd;
+
+    border: 0;
+    border-radius: 0 5px 5px 0;
+    background: #13AFAf;
+    color: #fff;
+}
 }
 .video-item img{
     max-width: 64px;

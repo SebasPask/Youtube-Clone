@@ -1,4 +1,5 @@
 import React,{ Component } from 'react';
+import _ from 'lodash';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bars';
 import VideoList from './components/video_list';
@@ -23,9 +24,10 @@ class App extends Component {
         });
     }
     render() {
+        const videoSearch = _.debounce((term) => {this.videoSearch(term)},4000);
         return (
             <div>
-                <SearchBar  onSearchTermChange={ term => this.videoSearch(term)}/>
+                <SearchBar   onSearchTermChange={ videoSearch} />
                 <div>
                     <VideoDetail video={this.state.selectedVideo} />
                     <VideoList
